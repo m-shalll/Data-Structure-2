@@ -8,7 +8,7 @@ def bubblesort(arr):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
                 flag = True
-            if not flag:
+        if not flag:
                 break
 
     end = time.time()
