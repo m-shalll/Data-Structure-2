@@ -13,4 +13,4 @@ def bubblesort(arr):
 
     end = time.time()
     total = end - begin
-    print(f"the runtime of bubbleSort is {total} seconds")
+    return total
