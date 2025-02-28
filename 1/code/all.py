@@ -24,8 +24,9 @@ for i in range(n):
     bubble_ypoints[i] = bubble_time
     insertion_ypoints[i] = insertion_time
     selection_ypoints[i] = selection_time
-
-plt.plot(xpoints, bubble_ypoints, label="Bubble Sort", marker="o")
+plt.xlabel("Array size")
+plt.ylabel("Time in milliseconds")
+plt.plot(xpoints,  bubble_ypoints, label="Bubble Sort", marker="o")
 plt.plot(xpoints, insertion_ypoints, label="Insertion Sort", marker="s")
 plt.plot(xpoints, selection_ypoints, label="Selection Sort", marker="s")
 plt.legend()
