@@ -14,8 +14,3 @@ def insertionSort(nums):
     end = time.time() 
     total=end-begin
     return total
-
-arr = [12, 11, 13, 5, 6]
-total=insertionSort(arr)
-print(arr)
-print(total)
