@@ -7,7 +7,7 @@ import numpy as np
 def randomArrayGenerator(size):
     return [random.randint(0,100000) for _ in range(size)]
 
-arr_sizes = [1000, 25000, 50000, 75000, 100000, 150000, 200000, 250000]
+arr_sizes = [1000, 25000, 50000, 75000]
 n = len(arr_sizes)
 bubble_ypoints = np.empty(n)
 insertion_ypoints = np.empty(n)
@@ -15,9 +15,9 @@ selection_ypoints = np.empty(n)
 xpoints = np.array(arr_sizes)
 for i in range(n):
     testArray = randomArrayGenerator(arr_sizes[i])
-    bubble_time = bubblesort(testArray)
-    insertion_time = insertionSort(testArray)
-    selection_time = selectionSort(testArray)
+    bubble_time = bubblesort(testArray.copy())
+    insertion_time = insertionSort(testArray.copy())
+    selection_time = selectionSort(testArray.copy())
     print(f"the runtime of bubbleSort is {bubble_time} seconds")
     print(f"the runtime of insertionSort is {insertion_time} seconds")
     print(f"the runtime of selectionSort is {selection_time} seconds")
