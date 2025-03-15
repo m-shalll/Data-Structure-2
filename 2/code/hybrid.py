@@ -1,4 +1,4 @@
-from Insertion import insertionSort
+from H_Insertion import insertionSort
 from merge import merge
 
 def hybrid_sort(arr, first, last, threshold):

@@ -1,29 +1,29 @@
-def heapifiy(list,i,size): #checks the node to see if children are bigger, if bigger switch them and call again on switched node
+def heapifiy(arr,i,size): #checks the node to see if children are bigger, if bigger switch them and call again on switched node
     largest=i
     l=i*2+1
     r=i*2+2
-    if(l<size and list[largest]<list[l]):
+    if(l<size and arr[largest]<arr[l]):
         largest=l
-    if(r<size and list[largest]<list[r]):
+    if(r<size and arr[largest]<arr[r]):
         largest=r
     if(largest!=i):
-        list[i],list[largest]=list[largest],list[i]
-        heapifiy(list,largest,size) #largest is the original node after switching
+        arr[i],arr[largest]=arr[largest],arr[i]
+        heapifiy(arr,largest,size) #largest is the original node after switching
 
-def buildHeap(list): #builds the heap itself so we can sort(heap itself is not sorted it just contains the max at the root)
-    size=len(list)
+def buildHeap(arr): #builds the heap itself so we can sort(heap itself is not sorted it just contains the max at the root)
+    size=len(arr)
     for i in range(size//2,-1,-1):#we divide size by 2 to ignore the leaf nodes
-        heapifiy(list,i,size)
+        heapifiy(arr,i,size)
 
-def sort(list):
-    for i in range(len(list)-1,0,-1):
-        list[0], list[i] = list[i], list[0]
-        heapifiy(list,0,i) #we use i because we decrease the size of the heap since we know that the last elements are sorted
+def heap_sort(arr):
+    for i in range(len(arr)-1,0,-1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapifiy(arr,0,i) #we use i because we decrease the size of the heap since we know that the last elements are sorted
 
 arr=[1,4,5,7,43,6,9]
-buildHeap(list)
-sort(list)
-print(list)
+buildHeap(arr)
+# sort(arr)
+print(arr)
 
 #sorting takes O(nlogn)
 #building heap takes O(n)
