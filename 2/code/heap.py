@@ -20,7 +20,7 @@ def sort(list):
         list[0], list[i] = list[i], list[0]
         heapifiy(list,0,i) #we use i because we decrease the size of the heap since we know that the last elements are sorted
 
-list=[1,4,5,7,43,6,9]
+arr=[1,4,5,7,43,6,9]
 buildHeap(list)
 sort(list)
 print(list)

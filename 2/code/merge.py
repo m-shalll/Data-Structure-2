@@ -1,5 +1,5 @@
 def merge(arr, first, mid, last):
-    temp = []
+    temp = [0] * (last + 1)
     first1 = first
     last1 = mid
     first2 = mid + 1
