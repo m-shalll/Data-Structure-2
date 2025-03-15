@@ -20,10 +20,5 @@ def heap_sort(arr):
         arr[0], arr[i] = arr[i], arr[0]
         heapifiy(arr,0,i) #we use i because we decrease the size of the heap since we know that the last elements are sorted
 
-arr=[1,4,5,7,43,6,9]
-buildHeap(arr)
-# sort(arr)
-print(arr)
-
 #sorting takes O(nlogn)
 #building heap takes O(n)

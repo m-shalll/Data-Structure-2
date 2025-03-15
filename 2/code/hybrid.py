@@ -11,6 +11,3 @@ def hybrid_sort(arr, first, last, threshold):
         hybrid_sort(arr, mid + 1, last, threshold)
         merge(arr, first, mid, last)
 
-arr=[1,4,5,7,43,6,9]
-hybrid_sort(arr, 0, len(arr) - 1, 3)
-print(arr)

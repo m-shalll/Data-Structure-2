@@ -1,16 +1,24 @@
-def quicksort(arr, start, end):
-    if end <= start: return # array cannot be divided anymore
-    pivot = part(arr, start, end)
-    quicksort(arr, start, pivot-1) #left partition
-    quicksort(arr, pivot+1, end) #right partition
+import random
 
-def part(arr, start, end):
-    pivot = arr[end]
-    i = start-1
-    for j in range(start, end):
-        if arr[j] < pivot:
-            i=i+1
-            arr[i], arr[j] = arr[j], arr[i]
-    i=i+1
-    arr[i], arr[end] = arr[end], arr[i]
-    return i
+
+def quicksort(arr, start, end):
+    if start < end:
+        pivot_index = random_part(arr, start, end)
+        quicksort(arr, start, pivot_index-1)
+        quicksort(arr, pivot_index + 1, end)
+
+def random_part(arr, start, end):
+    rand_pivot = random.randint(start, end)
+    arr[start], arr[rand_pivot] = arr[rand_pivot], arr[start]
+    return partition(arr, start, end)
+
+def partition(arr, start, end):
+    pivot = start
+    i = start+1
+    for j in range(start+1,end+1):
+        if arr[j] <= arr[pivot]:
+            arr[j], arr[i] = arr[i], arr[j]
+            i+=1
+    arr[i-1], arr[pivot] = arr[pivot], arr[i-1]
+    pivot = i-1
+    return pivot
