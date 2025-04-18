@@ -12,7 +12,7 @@ class RedBlackTree:
                 currentNode=currentNode.right
             else:
                 currentNode=currentNode.left
-            return None
+        return None
     
     def insert(self,value):
         newNode=Node(value)
@@ -39,34 +39,34 @@ class RedBlackTree:
 
     def insertFix(self, newNode):
         while newNode.parent and newNode.parent.color == 'red':
-            if newNode.parent == newNode.grandparent().left:
-                uncle = newNode.uncle()
+            if newNode.parent == newNode.getGrandParent().left:
+                uncle = newNode.getUncle()
                 if uncle and uncle.color == 'red':
                     newNode.parent.color = 'black'
                     uncle.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    newNode = newNode.grandparent()
+                    newNode.getGrandParent().color = 'red'
+                    newNode = newNode.getGrandParent()
                 else:
                     if newNode == newNode.parent.right:
                         newNode = newNode.parent
                         self.rotateLeft(newNode)
                     newNode.parent.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    self.rotateRight(newNode.grandparent())
+                    newNode.getGrandParent().color = 'red'
+                    self.rotateRight(newNode.getGrandParent())
             else:
-                uncle = newNode.uncle()
+                uncle = newNode.getUncle()
                 if uncle and uncle.color == 'red':
                     newNode.parent.color = 'black'
                     uncle.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    newNode = newNode.grandparent()
+                    newNode.getGrandParent().color = 'red'
+                    newNode = newNode.getGrandParent()
                 else:
                     if newNode == newNode.parent.left:
                         newNode = newNode.parent
                         self.rotateRight(newNode)
                     newNode.parent.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    self.rotateLeft(newNode.grandparent())
+                    newNode.getGrandParent().color = 'red'
+                    self.rotateLeft(newNode.getGrandParent())
         self.root.color = 'black'
 
     def rotateLeft(self, node):
