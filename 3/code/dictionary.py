@@ -7,6 +7,8 @@ def loadDictionary(filename,tree):
 def insertWord(word,tree):
     if tree.search(word) is None:
         tree.insert(word)
+        with open("dictionary.txt","a") as file:
+            file.write(word + "\n")
         print(tree.getSize())
         print(tree.GetHeight(tree.root))
         print(tree.BlackHeight())
@@ -18,6 +20,13 @@ def lookUp(word,tree):
         print("NO")
     else:
         print("YES")
+
+
+Dtree = RedBlackTree()
+loadDictionary("dictionary.txt",Dtree)
+lookUp("shal",Dtree)
+insertWord("shal",Dtree)
+insertWord("hamza",Dtree)
 
 
 

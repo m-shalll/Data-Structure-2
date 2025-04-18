@@ -15,7 +15,7 @@ class RedBlackTree:
                 currentNode = currentNode.right
             else:
                 currentNode = currentNode.left
-            return None
+        return None
 
     def insert(self, value):
         newNode = Node(value)
