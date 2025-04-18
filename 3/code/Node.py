@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self,value,color="red"):
+    def __init__(self,value,color='red'):
         self.value=value
         self.color=color
         self.parent=None

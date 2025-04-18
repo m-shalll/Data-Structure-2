@@ -39,35 +39,51 @@ class RedBlackTree:
 
     def insertFix(self, newNode):
         while newNode.parent and newNode.parent.color == 'red':
-            if newNode.parent == newNode.grandparent().left:
+            if newNode.parent == newNode.getGrandParent().left:
                 uncle = newNode.uncle()
                 if uncle and uncle.color == 'red':
                     newNode.parent.color = 'black'
                     uncle.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    newNode = newNode.grandparent()
+                    newNode.getGrandParent().color = 'red'
+                    newNode = newNode.getGrandParent()
                 else:
                     if newNode == newNode.parent.right:
                         newNode = newNode.parent
                         self.rotateLeft(newNode)
                     newNode.parent.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    self.rotateRight(newNode.grandparent())
+                    newNode.getGrandParent().color = 'red'
+                    self.rotateRight(newNode.getGrandParent())
             else:
-                uncle = newNode.uncle()
+                uncle = newNode.getUncle()
                 if uncle and uncle.color == 'red':
                     newNode.parent.color = 'black'
                     uncle.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    newNode = newNode.grandparent()
+                    newNode.getGrandParent().color = 'red'
+                    newNode = newNode.getGrandParent()
                 else:
                     if newNode == newNode.parent.left:
                         newNode = newNode.parent
                         self.rotateRight(newNode)
                     newNode.parent.color = 'black'
-                    newNode.grandparent().color = 'red'
-                    self.rotateLeft(newNode.grandparent())
+                    newNode.getGrandParent().color = 'red'
+                    self.rotateLeft(newNode.getGrandParent())
         self.root.color = 'black'
+    
+    def GetHeight(self,node):
+        if node is None:
+            return 0
+        left_height = self.GetHeight(node.left)
+        right_height = self.GetHeight(node.right)
+        return 1 + max(left_height, right_height)
+    
+    def BlackHeight(self):
+        node=self.root
+        counter=0
+        while(node is not None):
+            if node.color=='black':
+                counter+=1
+            node=node.left
+        return counter
 
     def rotateLeft(self, node):
         rightChild = node.right
@@ -99,3 +115,10 @@ class RedBlackTree:
             node.parent.left = leftChild
         leftChild.right = node
         node.parent = leftChild
+    
+list=[1,2,3]
+tree=RedBlackTree()
+for i in list:
+    tree.insert(i)
+print(tree.GetHeight(tree.root))
+print(tree.BlackHeight())
