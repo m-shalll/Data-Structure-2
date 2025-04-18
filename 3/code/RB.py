@@ -4,6 +4,7 @@ from Node import Node
 class RedBlackTree:
     def __init__(self):
         self.root = None
+        self.size = 0
 
     def search(self, value):
         currentNode = self.root
@@ -38,11 +39,12 @@ class RedBlackTree:
                     else:
                         currentNode = currentNode.right
         self.insertFix(newNode)
+        self.size += 1
 
     def insertFix(self, newNode):
         while newNode.parent and newNode.parent.color == 'red':
             if newNode.parent == newNode.getGrandParent().left:
-                uncle = newNode.uncle()
+                uncle = newNode.getUncle()
                 if uncle and uncle.color == 'red':
                     newNode.parent.color = 'black'
                     uncle.color = 'black'
@@ -87,6 +89,16 @@ class RedBlackTree:
             node = node.left
         return counter
 
+    def getSize(self):
+        return self.size
+
+    def getSizeN(self):
+        def countNodes(node):
+            if node is None: return 0
+            return 1 + countNodes(node.left) + countNodes(node.right)
+        return countNodes(self.root)
+
+
     def rotateLeft(self, node):
         rightChild = node.right
         node.right = rightChild.left
@@ -117,11 +129,3 @@ class RedBlackTree:
             node.parent.left = leftChild
         leftChild.right = node
         node.parent = leftChild
-
-
-list = [1, 2, 3]
-tree = RedBlackTree()
-for i in list:
-    tree.insert(i)
-print(tree.GetHeight(tree.root))
-print(tree.BlackHeight())

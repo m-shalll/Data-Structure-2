@@ -7,6 +7,9 @@ def loadDictionary(filename,tree):
 def insertWord(word,tree):
     if tree.search(word) is None:
         tree.insert(word)
+        print(tree.getSize())
+        print(tree.GetHeight(tree.root))
+        print(tree.BlackHeight())
     else:
         print(f"ERROR: '{word}' already in the dictionary!")
 
@@ -16,12 +19,6 @@ def lookUp(word,tree):
     else:
         print("YES")
 
-dictionary_tree = RedBlackTree()
-loadDictionary("dictionary.txt",dictionary_tree)
-lookUp("wawa",dictionary_tree)
-insertWord("wawa",dictionary_tree)
-lookUp("wawa",dictionary_tree)
-insertWord("wawa",dictionary_tree)
 
 
 
