@@ -1,28 +1,29 @@
-def TopologicalSort(graph):
+from collections import deque
+def topological_sort(graph):
     sortedElements=[]
-    in_degree = {u: 0 for u in graph}
-    for u in graph:
+    in_degree = {u: 0 for u in graph} # creates a dictionary which initializes each u with 0, to start counting incoming edges.
+    for u in graph: # loops over each vertex in the graph.
         for v in graph[u]:
             in_degree[v] += 1
-    n = set()  # n is a set of elements with no incoming edges
+    n = deque()  # n is a queue of elements with no incoming edges.
     for u in graph:
         if in_degree[u] == 0:
-            n.add(u)
+            n.append(u)
     while(n):
-        element = n.pop()
+        element = n.popleft()
         sortedElements.append(element)
         for neighbor in graph[element]:
             in_degree[neighbor] -= 1
             if in_degree[neighbor] == 0:
-                n.add(neighbor)
+                n.append(neighbor)
     if len(sortedElements) != len(graph):
         print("ERROR: graph has at least 1 cycle!")
         return
     print(sortedElements)
 
 graph = {
-    1: [2],
-    2: [3],
-    3: [1]
+    1: [3],
+    2: [1],
+    3: [2]
 }
-TopologicalSort(graph)
+topological_sort(graph)
