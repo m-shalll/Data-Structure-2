@@ -19,9 +19,9 @@ Following the previous assignment, we were asked to implement other sorting algo
 - ➗Merge sort: an also a divide and conquer algorithm, which keeps recursively dividing the list on halves, sort each half seperately and then merging the sorted halves.
   
 - 🌲Heap sort: this sorting algorithm contains multiple steps:
-  1.Building heap: a heap is a nearly complete binary tree, there can be a max or a min heap, a max heap has the largest element in its root, and every child is smaller than its parent(apply same logic to min heap).
-  2.Heapify: it is the process where we place a node(element) in its correct position in the tree, this happens by comparing the node with its children and switch their positions, then apply heapify again to the same node but in its new position until it is placed in its correct place.
-  3.Sorting: the sorting itself happens by removing the root, placing the last element in the root, heapifiy to fix the heap and repeating this process.
+  1. Building heap: a heap is a nearly complete binary tree, there can be a max or a min heap, a max heap has the largest element in its root, and every child is smaller than its parent(apply same logic to min heap).
+  2. Heapify: it is the process where we place a node(element) in its correct position in the tree, this happens by comparing the node with its children and switch their positions, then apply heapify again to the same node but in its new position until it is placed in its correct place.
+  3. Sorting: the sorting itself happens by removing the root, placing the last element in the root, heapifiy to fix the heap and repeating this process.
      
 - Hybrid merge and insertion sort:
 
