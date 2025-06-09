@@ -31,3 +31,22 @@ Find kth smallest: when we partition an array in quick sort we know for a fact t
 ---
 
 # ✅Assignment 3:
+Red black trees
+
+---
+# ✅Assignment 4:
+-Topological sort: Imagine a list of tasks, some of which depend on others to be completed first, this algorithm gives an order to perform these tasks. 
+Topological sort requires a direct acyclic graph, it is a directed graph with no cycles, take for example a list of courses, to unlock later courses you need to finish the ones before it, and there is no later course that will unlock a course you have already taken making it acyclic. What topological sort does it takes the courses with 0 indegrees (the courses at the very beginning) and adds it to a queue and then removing them from the graph, after removing it we check the indegrees of the other courses, if a course's indegree becomes 0 we add it to the queue, we do this process until all the courses have an indegree of 0 or in other words until the queue becomes empty.
+This process can produce multiple solutions as you can start with different vertices (courses) and take different paths.
+
+Now to start another topic I would like to explain some shortest path finding algorithms but before doing so I would like to define some key terms:
+-Tree: undirected acyclic graph
+-Spanning tree: a tree that touches all the vertices
+-Minimum spanning tree: a subgraph of an undirected weighted (edges have different weights) graph such that:
+  1. It is a tree
+  2. Covers all the vertices
+  3. Contains V-1 edges
+  4. Total cost associated with tree edges is minimum among all possible spanning trees
+  5. NOT NECESSARILY UNIQUE
+
+Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number.
