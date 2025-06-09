@@ -40,13 +40,13 @@ Topological sort requires a direct acyclic graph, it is a directed graph with no
 This process can produce multiple solutions as you can start with different vertices (courses) and take different paths.
 
 Now to start another topic I would like to explain some shortest path finding algorithms but before doing so I would like to define some key terms:
--Tree: undirected acyclic graph
--Spanning tree: a tree that touches all the vertices
--Minimum spanning tree: a subgraph of an undirected weighted (edges have different weights) graph such that:
+- Tree: undirected acyclic graph
+- Spanning tree: a tree that touches all the vertices
+- Minimum spanning tree: a subgraph of an undirected weighted (edges have different weights) graph such that:
   1. It is a tree
   2. Covers all the vertices
   3. Contains V-1 edges
   4. Total cost associated with tree edges is minimum among all possible spanning trees
   5. NOT NECESSARILY UNIQUE
 
-Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number.
+- Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number.
