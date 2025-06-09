@@ -51,9 +51,9 @@ Now to start another topic I would like to explain some shortest path finding al
 
 -Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number.
 
-The following algorithms have not been implemented but I would like to have a broef explaation for them:
+The following algorithms have not been implemented but I would like to have a brief explanation for them:
 
--Kruskal
+-Kruskal: with kruskal algorithm we lay out all the vertices and choose the edge with the smallest weight that also does not create a cycle which also results in a minimum spanning tree.
 
 -Dijkstra
 
