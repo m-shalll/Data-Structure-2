@@ -26,6 +26,8 @@ Following the previous assignment, we were asked to implement other sorting algo
 - Hybrid merge and insertion sort:
 
 
-Find kth smallest
+Find kth smallest: when we partition an array in quick sort we know for a fact that the pivot is in its correct position whether the list is fully sorted or not, knowing this key piece of information we will keep partitioning the array and comparing its current index with k, if they are the same we have found our kth smallest element, if not and the index of the partitioned element is less than k, we partition the righ tsub-array, and if our index is greater than k we partition the left sub-array.
 
 ---
+
+# ✅Assignment 3:
