@@ -56,7 +56,7 @@ When inserting a new node we inset the new node as red and the check the uncle:
   1. Left Left
      -
 ![Example](resources/left_left_btree.PNG)
-   2. Left right
+  2. Left right
      - 
   3. Right Right
      -
