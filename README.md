@@ -31,7 +31,38 @@ Find kth smallest: when we partition an array in quick sort we know for a fact t
 ---
 
 # ✅Assignment 3:
-Red black trees
+Now we will talk about red-black trees.
+Properties:
+1. It is a binary seach tree (balanced).
+2. Each node is either red or black.
+3. If a node is red both its children are black (cant have 2 reds in a row).
+4. Root is black.
+5. NILS are black (nodes soon to exist).
+6. All simple paths from any node x has the same number of black nodes.
+7. Each node has:
+   - Key (value)
+   - Left
+   - Right
+   - Parent
+   - Color
+   
+To balance a red-black tree we use two tool **Recoloring** and **Rotation**.
+When inserting a new node we inset the new node as red and the check the uncle:
+- Uncle is red:
+  1. Change color of uncle and parent to black.
+  2. Change color of grandparent to red.
+  3. Repeat the process with the grandparent.
+- Uncle is black (4 cases):
+  1. Left Left
+     -  
+![App Screenshot](resources/left left btree.png)
+   2. Left right
+     - 
+  3. Right Right
+     -
+  4. Right Left
+     - 
+  
 
 ---
 # ✅Assignment 4:
