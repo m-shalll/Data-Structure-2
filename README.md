@@ -54,8 +54,8 @@ When inserting a new node we inset the new node as red and the check the uncle:
   3. Repeat the process with the grandparent.
 - Uncle is black (4 cases):
   1. Left Left
-     -  
-![App Screenshot](resources/left left btree.png)
+     -
+![Example](resources/left left btree.PNG)
    2. Left right
      - 
   3. Right Right
