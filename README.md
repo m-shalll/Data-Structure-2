@@ -53,7 +53,7 @@ When inserting a new node we inset the new node as red and the check the uncle:
   2. Change color of grandparent to red.
   3. Repeat the process with the grandparent.
 - Uncle is black (4 cases):
-  1. **Left-Left (LL)**  
+1. **Left-Left (LL)**  
    Perform a right rotation on the grandparent.  
    ![Example](resources/left_left_btree.PNG)
 
