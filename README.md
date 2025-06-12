@@ -31,7 +31,45 @@ Find kth smallest: when we partition an array in quick sort we know for a fact t
 ---
 
 # ✅Assignment 3:
-Red black trees
+Now we will talk about red-black trees.
+Properties:
+1. It is a binary seach tree (balanced).
+2. Each node is either red or black.
+3. If a node is red both its children are black (cant have 2 reds in a row).
+4. Root is black.
+5. NILS are black (nodes soon to exist).
+6. All simple paths from any node x has the same number of black nodes.
+7. Each node has:
+   - Key (value)
+   - Left
+   - Right
+   - Parent
+   - Color
+   
+To balance a red-black tree we use two tool **Recoloring** and **Rotation**.
+When inserting a new node we inset the new node as red and the check the uncle:
+- Uncle is red:
+  1. Change color of uncle and parent to black.
+  2. Change color of grandparent to red.
+  3. Repeat the process with the grandparent.
+- Uncle is black (4 cases):
+1. **Left-Left (LL)**  
+   Perform a right rotation on the grandparent.  
+   ![Example](resources/left_left_btree.PNG)
+
+2. **Left-Right (LR)**  
+   Perform a left rotation on the parent, then a right rotation on the grandparent.  
+   ![Example](resources/left_right_btree.PNG)
+
+3. **Right-Right (RR)**  
+   Perform a left rotation on the grandparent.  
+   ![Example](resources/right_right_btree.PNG)
+
+4. **Right-Left (RL)**  
+   Perform a right rotation on the parent, then a left rotation on the grandparent.  
+   ![Example](resources/right_left_btree.PNG)
+
+  
 
 ---
 # ✅Assignment 4:
@@ -39,7 +77,7 @@ Red black trees
 Topological sort requires a direct acyclic graph, it is a directed graph with no cycles, take for example a list of courses, to unlock later courses you need to finish the ones before it, and there is no later course that will unlock a course you have already taken making it acyclic. What topological sort does it takes the courses with 0 indegrees (the courses at the very beginning) and adds it to a queue and then removing them from the graph, after removing it we check the indegrees of the other courses, if a course's indegree becomes 0 we add it to the queue, we do this process until all the courses have an indegree of 0 or in other words until the queue becomes empty.
 This process can produce multiple solutions as you can start with different vertices (courses) and take different paths.
 
-Now to start another topic I would like to explain some shortest path finding algorithms but before doing so I would like to define some key terms:
+Now to start another topic I would like to explain some shortest path finding algorithms and minimum spanning trees but before doing so I would like to define some key terms:
 - Tree: undirected acyclic graph
 - Spanning tree: a tree that touches all the vertices
 - Minimum spanning tree: a subgraph of an undirected weighted (edges have different weights) graph such that:
@@ -49,4 +87,12 @@ Now to start another topic I would like to explain some shortest path finding al
   4. Total cost associated with tree edges is minimum among all possible spanning trees
   5. NOT NECESSARILY UNIQUE
 
-- Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number.
+-Prim's algorithm: imagine you want to invade a country, and you start from a city and you want to expand to different cities, you start and see which neighbouring cities you can actually invade and then pick the one with the least resources needed to invade (the least weighted edge), after invading this city you can either unlock new cities you can invade or find easier ways to invade cities you could have invaded before. That is the whole idea of prim's algorithm, we first assume that to reach any vertix it would infinity and we slowly decrease this number, this process produces a mst.
+
+The following algorithms have not been implemented but I would like to have a brief explanation for them:
+
+-Kruskal: with kruskal algorithm we lay out all the vertices and choose the edge with the smallest weight that also does not create a cycle which also results in a minimum spanning tree.
+
+-Dijkstra: works similarly to prim's but when calculating the distances we add the weight of the edges to the shortest distance needed to reach the vertix we are currently on key difference is that dijkstra produces the shortest path from a source node to every node which doesnt necessarily produce an mst, it produces the shortest path to these nodes.
+
+
