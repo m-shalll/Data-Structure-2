@@ -107,6 +107,6 @@ The following algorithms have not been implemented but I would like to have a br
 ## Graphs 
 - In an undirected graph, the maximum number of edges is achieved when the graph is complete, meaning every pair of distinct nodes is connected by a unique edge. The formula for the maximum number of edges in a complete undirected graph with n nodes is: **n×(n−1)/2**
 - This is because each of the n nodes can be connected to n−1, but this counts each edge twice (once from each end), so we divide by 2 to get the correct count.
-  [Acyclic directed vs undirected](resources/directed_cyclic_acyclic.png)
+  ![Acyclic directed vs undirected](resources/directed_cyclic_acyclic.png)
 Here is also a very useful sheet that contains the complexities of algorithms (all credit goes to kyrollosyoussef02@gmail.com):
 https://docs.google.com/spreadsheets/d/1yZOz66WyuHBM2GkCr04Ozur42guU1nwmm2kIfMEvfaw/edit?gid=0#gid=0
