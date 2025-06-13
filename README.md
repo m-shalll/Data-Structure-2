@@ -95,6 +95,9 @@ The following algorithms have not been implemented but I would like to have a br
 
 -Dijkstra: works similarly to prim's but when calculating the distances we add the weight of the edges to the shortest distance needed to reach the vertix we are currently on key difference is that dijkstra produces the shortest path from a source node to every node which doesnt necessarily produce an mst, it produces the shortest path to these nodes.
 
-#Extras:
+# Extras:
 - An important way to solve recurances is called the master theorm and here is how we use it:
   ![](resources/master.jpg)
+
+Here is also a very useful sheet that contains the complexities of algorithms (all credit goes to kyrollosyoussef02@gmail.com):
+https://docs.google.com/spreadsheets/d/1yZOz66WyuHBM2GkCr04Ozur42guU1nwmm2kIfMEvfaw/edit?gid=0#gid=0
