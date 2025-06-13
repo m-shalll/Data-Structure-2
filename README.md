@@ -53,15 +53,22 @@ When inserting a new node we inset the new node as red and the check the uncle:
   2. Change color of grandparent to red.
   3. Repeat the process with the grandparent.
 - Uncle is black (4 cases):
-  1. Left Left
-     -
-![Example](resources/left_left_btree.PNG)
-   2. Left right
-     - 
-  3. Right Right
-     -
-  4. Right Left
-     - 
+1. **Left-Left (LL)**  
+   Perform a right rotation on the grandparent.  
+   ![Example](resources/left_left_btree.PNG)
+
+2. **Left-Right (LR)**  
+   Perform a left rotation on the parent, then a right rotation on the grandparent.  
+   ![Example](resources/left_right_btree.PNG)
+
+3. **Right-Right (RR)**  
+   Perform a left rotation on the grandparent.  
+   ![Example](resources/right_right_btree.PNG)
+
+4. **Right-Left (RL)**  
+   Perform a right rotation on the parent, then a left rotation on the grandparent.  
+   ![Example](resources/right_left_btree.PNG)
+
   
 
 ---
@@ -88,4 +95,4 @@ The following algorithms have not been implemented but I would like to have a br
 
 -Dijkstra: works similarly to prim's but when calculating the distances we add the weight of the edges to the shortest distance needed to reach the vertix we are currently on key difference is that dijkstra produces the shortest path from a source node to every node which doesnt necessarily produce an mst, it produces the shortest path to these nodes.
 
--Bellman ford
+
