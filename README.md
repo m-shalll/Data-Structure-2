@@ -97,4 +97,4 @@ The following algorithms have not been implemented but I would like to have a br
 
 #Extras:
 - An important way to solve recurances is called the master theorm and here is how we use it:
-  !(resources/master.jpg)
+  ![](resources/master.jpg)
