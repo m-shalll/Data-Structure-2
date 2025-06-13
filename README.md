@@ -33,7 +33,7 @@ Find kth smallest: when we partition an array in quick sort we know for a fact t
 # ✅Assignment 3:
 Now we will talk about red-black trees.
 Properties:
-1. It is a binary seach tree (balanced).
+1. It is a binary seach tree.
 2. Each node is either red or black.
 3. If a node is red both its children are black (cant have 2 reds in a row).
 4. Root is black.
