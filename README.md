@@ -14,14 +14,14 @@ What is common between these sorting algorithms is that their worst-case scenari
 # ✅Assignment 2:
 Following the previous assignment, we were asked to implement other sorting algorithms that are much faster and solve a simple yet tricky problem:
 
-- ⚓Quick sort: a divide and conquer algorithm where we pick a pivot in our list and we sort to so that all the elements that are on the left of the pivot are smaller and all the elements on right are bigger and we repeat this process with different pivots.
+- ⚓Quick sort: a divide and conquer algorithm where we pick a pivot in our list and we sort so that all the elements that are on the left of the pivot are smaller and all the elements on right are bigger and we repeat this process with different pivots.
   
-- ➗Merge sort: an also a divide and conquer algorithm, which keeps recursively dividing the list on halves, sort each half seperately and then merging the sorted halves.
+- ➗Merge sort: an also a divide and conquer algorithm, which keeps recursively dividing the list on halves, sort each half separately and then merging the sorted halves.
   
 - 🌲Heap sort: this sorting algorithm contains multiple steps:
   1. Building heap: a heap is a nearly complete binary tree, there can be a max or a min heap, a max heap has the largest element in its root, and every child is smaller than its parent(apply same logic to min heap).
   2. Heapify: it is the process where we place a node(element) in its correct position in the tree, this happens by comparing the node with its children and switch their positions, then apply heapify again to the same node but in its new position until it is placed in its correct place.
-  3. Sorting: the sorting itself happens by removing the root, placing the last element in the root, heapifiy to fix the heap and repeating this process.
+  3. Sorting: the sorting itself happens by removing the root, placing the last element in the root, heapify to fix the heap and repeating this process.
      
 - Hybrid merge and insertion sort:
 
@@ -33,7 +33,7 @@ Find kth smallest: when we partition an array in quick sort we know for a fact t
 # ✅Assignment 3:
 Now we will talk about red-black trees.
 Properties:
-1. It is a binary seach tree (balanced).
+1. It is a binary seach tree.
 2. Each node is either red or black.
 3. If a node is red both its children are black (cant have 2 reds in a row).
 4. Root is black.
@@ -47,7 +47,7 @@ Properties:
    - Color
    
 To balance a red-black tree we use two tool **Recoloring** and **Rotation**.
-When inserting a new node we inset the new node as red and the check the uncle:
+When inserting a new node we insert the new node as red and then check the uncle:
 - Uncle is red:
   1. Change color of uncle and parent to black.
   2. Change color of grandparent to red.
@@ -74,7 +74,7 @@ When inserting a new node we inset the new node as red and the check the uncle:
 ---
 # ✅Assignment 4:
 -Topological sort: Imagine a list of tasks, some of which depend on others to be completed first, this algorithm gives an order to perform these tasks. 
-Topological sort requires a direct acyclic graph, it is a directed graph with no cycles, take for example a list of courses, to unlock later courses you need to finish the ones before it, and there is no later course that will unlock a course you have already taken making it acyclic. What topological sort does it takes the courses with 0 indegrees (the courses at the very beginning) and adds it to a queue and then removing them from the graph, after removing it we check the indegrees of the other courses, if a course's indegree becomes 0 we add it to the queue, we do this process until all the courses have an indegree of 0 or in other words until the queue becomes empty.
+Topological sort requires a directed acyclic graph, it is a directed graph with no cycles, take for example a list of courses, to unlock later courses you need to finish the ones before it, and there is no later course that will unlock a course you have already taken making it acyclic. What topological sort does it takes the courses with 0 indegrees (the courses at the very beginning) and adds it to a queue and then remove them from the graph, after removing it we check the indegrees of the other courses, if a course's indegree becomes 0 we add it to the queue, we do this process until all the courses have an indegree of 0 or in other words until the queue becomes empty.
 This process can produce multiple solutions as you can start with different vertices (courses) and take different paths.
 
 Now to start another topic I would like to explain some shortest path finding algorithms and minimum spanning trees but before doing so I would like to define some key terms:
@@ -96,8 +96,17 @@ The following algorithms have not been implemented but I would like to have a br
 -Dijkstra: works similarly to prim's but when calculating the distances we add the weight of the edges to the shortest distance needed to reach the vertix we are currently on key difference is that dijkstra produces the shortest path from a source node to every node which doesnt necessarily produce an mst, it produces the shortest path to these nodes.
 
 # Extras:
-- An important way to solve recurances is called the master theorm and here is how we use it:
+## Master theorom:
   ![](resources/master.jpg)
+
+## B-trees
+- A b-tree is a self balancing tree which is mainly used for storage systems like disk based storage systems.
+- Its main idea is to reduce number of disk accesses.
+- An m-way tree of order m means it can have at most m children and a maximum of m-1 elements and a minimum of m/2 (except root).
+
+## Graphs 
+- In an undirected graph, the maximum number of edges is achieved when the graph is complete, meaning every pair of distinct nodes is connected by a unique edge. The formula for the maximum number of edges in a complete undirected graph with n nodes is: **n×(n−1)/2**
+- This is because each of the n nodes can be connected to n−1, but this counts each edge twice (once from each end), so we divide by 2 to get the correct count.
 
 Here is also a very useful sheet that contains the complexities of algorithms (all credit goes to kyrollosyoussef02@gmail.com):
 https://docs.google.com/spreadsheets/d/1yZOz66WyuHBM2GkCr04Ozur42guU1nwmm2kIfMEvfaw/edit?gid=0#gid=0
